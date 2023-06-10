@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next"
 import GoodsItems from "../../../MainComponents/Cards/GoodsItems"
 import BuffetmanCard from "../../../MainComponents/Cards/BuffetmanCard"
 import BuffetBuyCard from "../../../MainComponents/Cards/BuffetBuyCard"
+import WeeklyChart from "../../View/Parents/WeeklyChart/WeeklyChart"
 const Parents = (props) => {
     const { t, i18n } = useTranslation()
     const params = useParams()
@@ -48,7 +49,7 @@ const Parents = (props) => {
     return (
         <Box sx={{ bgcolor: "#f0f0f0" }} >
             <Topbar page="Parents" />
-            <Box sx={{ minHeight: "550px", display: "flex", flexWrap: "wrap", justifyContent: "space-around", bgcolor: "white" }}>
+            <Box sx={{ minHeight: "550px", display: "flex", justifyContent: "space-around", bgcolor: "white" }}>
                 <Box sx={{
                     width: "18%", height: "auto", boxShadow: '0px 0px 4px #00000001 !important', borderRadius: "10px"
                     , backgroundColor: "white", boxSizing: "border-box", p: 2
@@ -57,34 +58,35 @@ const Parents = (props) => {
                         border: "1px solid lightgrey", borderRadius: "15px", display: "flex", flexDirection: "column"
                         , backgroundColor: "#f8f8f8", boxSizing: "border-box", p: 1
                     }}>
-                        <Box sx={{ display: "flex", width: "100%", boxSizing: "border-box", borderBottom: "1px solid #d0d0d0", p: 2, flexDirection: "row", justifyContent: "space-between" }}><Typography sx={{ cursor: "pointer", fontSize: "1rem" }}>{infos[0].name}</Typography>
-                            <Typography sx={{ fontSize: "1.1rem" }}>{t("seller")}</Typography></Box>
-                        <Box sx={{ display: "flex", width: "100%", boxSizing: "border-box", borderBottom: "1px solid #d0d0d0", p: 2, flexDirection: "row", justifyContent: "space-between" }}><Typography sx={{ cursor: "pointer", fontSize: "1rem" }}>{infos[0].school}</Typography>
-                            <Typography sx={{ fontSize: "1.1rem" }}>مدرسه</Typography></Box>
-                        <Box sx={{ display: "flex", width: "100%", boxSizing: "border-box", borderBottom: "1px solid #d0d0d0", p: 2, flexDirection: "row", justifyContent: "space-between" }}><Typography sx={{ cursor: "pointer", fontSize: "1rem" }}>{infos[0].shift}</Typography>
-                            <Typography sx={{ fontSize: "1.1rem" }}>شیفت</Typography></Box>
+                        <Box sx={{ display: "flex", width: "100%", boxSizing: "border-box", borderBottom: "1px solid #d0d0d0", p: 1, flexDirection: "row", justifyContent: "space-between" }}><Typography sx={{ cursor: "pointer", fontSize: "1rem" }}>{infos[0].name}</Typography>
+                            <Typography sx={{ fontSize: "1rem" }}>{t("seller")}</Typography></Box>
+                        <Box sx={{ display: "flex", width: "100%", boxSizing: "border-box", borderBottom: "1px solid #d0d0d0", p: 1, flexDirection: "row", justifyContent: "space-between" }}><Typography sx={{ cursor: "pointer", fontSize: "1rem" }}>{infos[0].school}</Typography>
+                            <Typography sx={{ fontSize: "1rem" }}>مدرسه</Typography></Box>
+                        <Box sx={{ display: "flex", width: "100%", boxSizing: "border-box", borderBottom: "1px solid #d0d0d0", p: 1, flexDirection: "row", justifyContent: "space-between" }}><Typography sx={{ cursor: "pointer", fontSize: "1rem" }}>{infos[0].shift}</Typography>
+                            <Typography sx={{ fontSize: "1rem" }}>شیفت</Typography></Box>
                         <Box sx={{ display: "flex", width: "100%", boxSizing: "border-box", p: 1, flexDirection: "column", justifyContent: "space-between" }}><TrophyImg src="/images/icons/3x4Image.jpg" /></Box>
                     </Box>
                 </Box>
-                <Box sx={{ width: "30%", minHeight: "400px", boxShadow: '0px 0px 4px #00000001 !important', borderRadius: "10px", backgroundColor: "white", boxSizing: "border-box", p: "10px" }}>
+                <Box sx={{ width: "58%", minHeight: "400px", boxShadow: '0px 0px 4px #00000001 !important', borderRadius: "10px", backgroundColor: "white", boxSizing: "border-box", p: "10px" }}>
+                    <WeeklyChart/>
                 </Box>
-                <Box sx={{ width: "44%", height: "auto", boxShadow: '0px 0px 4px #00000001 !important', borderRadius: "10px", backgroundColor: "white", boxSizing: "border-box", p: 2 }}>
+                <Box sx={{ width: "24%", height: "auto", boxShadow: '0px 0px 4px #00000001 !important', borderRadius: "10px", backgroundColor: "white", boxSizing: "border-box", p: 2 }}>
                     <Box sx={{ border: "1px solid lightgrey", borderRadius: "15px", display: "flex", flexDirection: "column", backgroundColor: "#f8f8f8", boxSizing: "border-box", p: 1 }}>
-                        <Typography sx={{ fontSize: "1.4rem", mt: "auto", mb: "auto", textAlign: "right", mt: 2 }}>مشخصات</Typography>
+                        <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right", mt: 2 }}>مشخصات</Typography>
                         <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
-                            <Box sx={{ width: "40%" }}>
+                            <Box sx={{ width: "30%" }}>
                                 <TrophyImg src="/images/icons/student.jpg" />
                             </Box>
-                            <Box sx={{width:"60%"}}>
-                                <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>نام : مسعود عابدین</Typography>
-                                <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>شماره بوفه : 5555555555</Typography>
-                                <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>کلاس : سوم</Typography>
-                                <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>نام پدر : سبحان</Typography>
-                                <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>دبستان : شهید آوینی</Typography>
-                                <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>ممنوعیت خاص : شیر پرچرب</Typography>
-                                <Box sx={{display:"flex", mt: 3,justifyContent:"space-around"}}>
-                                    <Button sx={{bgcolor:"orange",mt:"auto",mb:"auto",color:"white",":hover":{bgcolor:"orange"}}}>شارژ کیف پول</Button>
-                                    <Typography sx={{ fontSize: "1.2rem", mt: "auto", mb: "auto", textAlign: "right" }}>موجودی : 1,750,000 تومان</Typography>
+                            <Box sx={{width:"70%"}}>
+                                <Typography sx={{ fontSize: "1rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>نام : مسعود عابدین</Typography>
+                                <Typography sx={{ fontSize: "1rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>شماره بوفه : 5555555555</Typography>
+                                <Typography sx={{ fontSize: "1rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>کلاس : سوم</Typography>
+                                <Typography sx={{ fontSize: "1rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>نام پدر : سبحان</Typography>
+                                <Typography sx={{ fontSize: "1rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>دبستان : شهید آوینی</Typography>
+                                <Typography sx={{ fontSize: "1rem", mt: "auto", mb: "auto", textAlign: "right", mt: 3 }}>ممنوعیت خاص : شیر پرچرب</Typography>
+                                <Box sx={{display:"flex", mt: 3,flexDirection:"column",justifyContent:"space-around"}}>
+                                    <Typography sx={{ fontSize: "1rem", mt: "auto", mb: "auto", textAlign: "right" }}>موجودی : 1,750,000 تومان</Typography>
+                                    <Button sx={{bgcolor:"orange",mt:1,alignSelf:"center",width:"120px",color:"white",":hover":{bgcolor:"orange"}}}>شارژ کیف پول</Button>
                                 </Box>
                             </Box>
                         </Box>
